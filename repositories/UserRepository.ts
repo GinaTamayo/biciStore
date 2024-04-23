@@ -6,8 +6,6 @@ class UserRepository {
     static async add(user: User){
         const sql = 'INSERT INTO user (numeroDocumento, nombre, apellido, telefono, email, password) VALUES (?, ?, ?, ?, ?, ?)';
         const values = [user.numeroDocumento, user.nombre, user.apellido, user.telefono, user.email, user.password];
-        console.log(db.execute(sql, values));
-                
         return db.execute(sql, values);
     }
 

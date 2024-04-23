@@ -32,6 +32,8 @@ let register = async (req: Request, res: Response) => {
     if (error && error.code == "ER_DUP_ENTRY") {
       return res.status(500).send({ errorInfo: error.sqlMessage }
       );
+    }else{
+      return res.status(500).send({ error})
     }
   }
 }
